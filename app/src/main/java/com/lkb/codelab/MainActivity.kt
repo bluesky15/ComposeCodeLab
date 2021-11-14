@@ -9,6 +9,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
@@ -33,13 +34,17 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+    Surface(color= Color.Blue) {
+        Text(text = "Hello $name!")
+    }
+
 }
 class NameProvider:PreviewParameterProvider<String>{
     override val values: Sequence<String>
         get() = sequenceOf("Lalit", "Jhon Doe")
 
 }
+
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview(@PreviewParameter(NameProvider::class)name:String) {
